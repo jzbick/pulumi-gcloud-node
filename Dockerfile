@@ -6,9 +6,9 @@ RUN apt update && apt install -y \
 # Add pulumi
 RUN curl -fsSL https://get.pulumi.com/ | sh
 # Add gcloud
-RUN curl -sSL https://sdk.cloud.google.com | sh
+RUN curl -fsSL https://sdk.cloud.google.com | bash
 # Add both to path
-ENV PATH $PATH:/root/.pulumi/bin:/usr/local/gcloud/google-cloud-sdk/bin
+ENV PATH=$PATH:/root/.pulumi/bin:/usr/local/gcloud/google-cloud-sdk/bin
 
 WORKDIR /app
 CMD ["sh"]
